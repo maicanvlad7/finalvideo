@@ -212,7 +212,7 @@ export default async function Learn() {
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex flex-col items-left">
-            <h1 className="text-lg font-semibold md:text-2xl">{user?.user_metadata?.name}'s Journey</h1>
+            <h1 className="text-lg font-semibold md:text-2xl">{user?.user_metadata?.name}&apos;s Journey</h1>
             <p className="text-md text-muted-foreground">Never stop expanding your potential</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
