@@ -1,13 +1,6 @@
 
-import { createClient } from "@/utils/supabase/server";
-export default async function UserBadge() {
-    const supabase = createClient();
-
-    const {
-        data: { user },
-        } = await supabase.auth.getUser();
-        
-    console.log(user)
+export default async function UserBadge(data: any) {
+    const user = data.data
 
     return(
         <div className="rounded-md border-slate-600 border-[1px] flex p-2 flex-row gap-2 items-center my-3">

@@ -10,6 +10,7 @@ import {
   Search,
   ShoppingCart,
   Users,
+  Copy
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -17,10 +18,10 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import MobileHeader from "@/components/MobileHeader";
 import DesktopNav from "@/components/DesktopNav";
-
-import { usePathname } from 'next/navigation'
-import { getCourses } from './actions'
-import { CourseCard } from "@/components/CourseCard";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import RevenueSimulator from "@/components/RevenuSimulator";
 
 const supabase = createClient()
 
@@ -29,7 +30,7 @@ const getFirstLogin = async () => {
   if(result) return result
 }
 
-export default async function Learn() {
+export default async function Earn() {
   
     const {
         data: { user },
@@ -38,8 +39,6 @@ export default async function Learn() {
         if (!user) {
         return redirect("/login");
     }
-
-    const courses = await getCourses()
 
     const firstLogin = await getFirstLogin()
     if(firstLogin?.data?.length == 0) return redirect('/welcome')
@@ -72,14 +71,23 @@ export default async function Learn() {
         <MobileHeader />
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex flex-col items-left">
-            <h1 className="text-lg font-semibold md:text-2xl">{user?.user_metadata?.name}&apos;s Journey</h1>
-            <p className="text-md text-muted-foreground">Never stop expanding your potential</p>
+            <h1 className="text-lg font-semibold md:text-2xl">Earn Money</h1>
+            <p className="text-md text-muted-foreground">Invite your community and start earning money</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16">
-          {courses?.data?.map((course) => {
-            return (
-              <CourseCard key={course.id} data={course} />
-          )})}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          <div className="flex flex-col w-full max-w-sm items-left space-x-2">
+            <div className="grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="email">Referral Link</Label>
+                <div className="flex max-w-sm w-full items-left space-x-2">
+                    <Input type="text" className="border-slate-400" disabled placeholder="finalvideo.vercel.app/invite?code=GBR123" />
+                    <Button>
+                        <Copy className="w-4 h-4"></Copy>
+                    </Button>
+                </div>
+
+                <RevenueSimulator />
+            </div>
+        </div>
           </div>
         </main>
       </div>
