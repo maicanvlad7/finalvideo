@@ -21,31 +21,25 @@ import DesktopNav from "@/components/DesktopNav";
 import { usePathname } from 'next/navigation'
 import { getCourses } from './actions'
 import { CourseCard } from "@/components/CourseCard";
+import { checkLogin, getFirstLogin } from "../actions";
 
-const supabase = createClient()
 
-const getFirstLogin = async () => {
-  const result =  await supabase.from('user_first_login').select('*')
-  if(result) return result
-}
 
 export default async function Learn() {
   
-    const {
-        data: { user },
-        } = await supabase.auth.getUser();
-        
-        if (!user) {
-        return redirect("/login");
-    }
-
-    const courses = await getCourses()
-
-    const firstLogin = await getFirstLogin()
-    console.log(firstLogin)
-    if(firstLogin?.data?.length == 0) return redirect('/welcome')
+  const {data: {user}} = await checkLogin()
     
-    // if(!firstLogin?.data) return redirect('/welcome');
+  if(!user) {
+      return redirect('/login')
+  }else {
+      const firstLogin = await getFirstLogin()
+      
+      if(firstLogin.data?.length == 0) {
+          return redirect('/welcome')
+      }
+  }
+
+  const courses = await getCourses()
 
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
