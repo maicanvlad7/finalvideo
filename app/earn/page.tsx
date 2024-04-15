@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import RevenueSimulator from "@/components/RevenuSimulator";
 import { checkLogin, getFirstLogin } from "../actions";
+import ReferralLink from "@/components/ReferralLink";
 
 
 export default async function Earn() {
@@ -60,22 +61,8 @@ export default async function Earn() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           <div className="flex flex-col w-full max-w-sm items-left space-x-2">
-            <div className="grid w-full max-w-sm items-center gap-1.5">
-                <Label htmlFor="email">Referral Link</Label>
-                <div className="flex max-w-sm w-full items-left space-x-2">
-                    <Input type="text" className="border-slate-400" disabled placeholder="finalvideo.vercel.app/invite?code=GBR123" />
-                    <Button
-                    // onClick={() => {
-                    //     toast({
-                    //       title: "Scheduled: Catch up",
-                    //       description: "Friday, February 10, 2023 at 5:57 PM",
-                    //     })
-                    //   }}
-                    >
-                        <Copy className="w-4 h-4"></Copy>
-                    </Button>
-                </div>
-
+            <div className="grid w-full max-w-sm items-center gap-1.5 border-[1px] border-slate-700 p-8 rounded-md">
+                <ReferralLink />
                 <RevenueSimulator />
             </div>
         </div>
