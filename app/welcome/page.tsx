@@ -1,20 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
+import { checkLogin } from "../actions";
 
-const supabase = createClient()
 
-const getUserData = async () => {
-    const { data: { user } } = await supabase.auth.getUser()
-    if(user) return user;
-}
 
 export default async function Welcome() {
 
     const startJourney = async () => {
         "use server"
         
-        const user = await getUserData()
+        const {data: {user}} = await checkLogin()
+        const supabase = createClient()
 
         if(user) {
             const { error } = await supabase
