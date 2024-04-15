@@ -42,6 +42,7 @@ export default async function Learn() {
     const courses = await getCourses()
 
     const firstLogin = await getFirstLogin()
+    console.log(firstLogin)
     if(firstLogin?.data?.length == 0) return redirect('/welcome')
     
     // if(!firstLogin?.data) return redirect('/welcome');

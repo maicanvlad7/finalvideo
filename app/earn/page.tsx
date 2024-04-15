@@ -23,6 +23,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import RevenueSimulator from "@/components/RevenuSimulator";
 
+
 const supabase = createClient()
 
 const getFirstLogin = async () => {
@@ -43,7 +44,7 @@ export default async function Earn() {
     const firstLogin = await getFirstLogin()
     if(firstLogin?.data?.length == 0) return redirect('/welcome')
     
-    // if(!firstLogin?.data) return redirect('/welcome');
+    
 
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
@@ -80,7 +81,14 @@ export default async function Earn() {
                 <Label htmlFor="email">Referral Link</Label>
                 <div className="flex max-w-sm w-full items-left space-x-2">
                     <Input type="text" className="border-slate-400" disabled placeholder="finalvideo.vercel.app/invite?code=GBR123" />
-                    <Button>
+                    <Button
+                    // onClick={() => {
+                    //     toast({
+                    //       title: "Scheduled: Catch up",
+                    //       description: "Friday, February 10, 2023 at 5:57 PM",
+                    //     })
+                    //   }}
+                    >
                         <Copy className="w-4 h-4"></Copy>
                     </Button>
                 </div>

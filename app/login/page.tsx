@@ -16,12 +16,11 @@ import { createClient } from "@/utils/supabase/server"
 import { redirect } from "next/navigation"
 
 export default function Login() {
-    
+
     const signInWithGoogle = async (formData: FormData) => {
         "use server";
 
         const origin = headers().get("origin");
-        const email = formData.get("email") as string;
         const supabase = createClient();
 
         const { data, error } = await supabase.auth.signInWithOAuth({
