@@ -9,7 +9,7 @@ const getUserData = async () => {
     if(user) return user;
 }
 
-export default function Welcome() {
+export default async function Welcome() {
 
     const startJourney = async () => {
         "use server"

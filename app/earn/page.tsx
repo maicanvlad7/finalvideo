@@ -1,26 +1,16 @@
 import Link from "next/link"
 import {
   Bell,
-  CircleUser,
-  Home,
-  LineChart,
-  Menu,
-  Package,
   Package2,
-  Search,
-  ShoppingCart,
-  Users,
   Copy
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import MobileHeader from "@/components/MobileHeader";
 import DesktopNav from "@/components/DesktopNav";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import RevenueSimulator from "@/components/RevenuSimulator";
 import { checkLogin, getFirstLogin } from "../actions";
 
