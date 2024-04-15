@@ -44,8 +44,8 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen justify-center content-center align-middle">
-            <Card className="mx-auto max-w-sm sm:max-w-lg p-4 border-slate-300">
+        <div className="min-h-screen justify-center content-center ">
+            <Card className="mx-auto max-w-sm sm:max-w-lg p-4 border-slate-300 align-middle">
                 <CardHeader className="text-center">
                     <CardTitle className="text-4xl">Welcome Back</CardTitle>
                     <CardDescription>
