@@ -1,8 +1,10 @@
 import { createClient } from "@/utils/supabase/server"
 
-const supabase = createClient()
+
 
 export  async function getCourses(){
+    const supabase = createClient()
+    
     const result = await supabase.from('courses').select('*')
     if(result) return result;
 }
