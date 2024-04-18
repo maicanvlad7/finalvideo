@@ -1,6 +1,8 @@
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
+
 import {
   Card,
   CardContent,
@@ -44,12 +46,12 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen justify-center content-center ">
-            <Card className="mx-auto max-w-sm sm:max-w-lg p-4 border-slate-300 align-middle">
+        <div className="min-h-screen justify-center content-center bg-[url('https://elei.b-cdn.net/videoDar/bgimages/bgnoauth.webp')]">
+            <Card className="mx-auto max-w-sm sm:max-w-lg sm:py-6 sm:px-12 px-3 py-8 bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 rounded-[20px]">
                 <CardHeader className="text-center">
-                    <CardTitle className="text-4xl">Welcome Back</CardTitle>
+                    <CardTitle className="text-5xl text-creator">CreatorX</CardTitle>
                     <CardDescription>
-                    Enter your email below to login to your account
+                    Please login to continue
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -60,29 +62,49 @@ export default function Login() {
                             id="email"
                             type="email"
                             placeholder="m@example.com"
+                            className="bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 text-md p-4"
                             required
                             />
                         </div>
                         <div className="grid gap-2">
                             <div className="flex items-center">
                             <Label htmlFor="password">Password</Label>
-                            <Link href="#" className="ml-auto inline-block text-sm underline">
-                                Forgot your password?
-                            </Link>
                             </div>
-                            <Input id="password" type="password" required />
+                            <Input 
+                            id="password" 
+                            type="password" 
+                            required 
+                            className="bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 text-md p-4"
+                            />
                         </div>
-                        <Button type="submit" className="w-full">
-                            Login
+                        <div className="flex justify-between">
+                            <div className="flex items-center space-x-2">
+                                <Checkbox id="terms" />
+                                <label
+                                    htmlFor="terms"
+                                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                >
+                                    Remember me?
+                                </label>
+                            </div>
+                            <Link href="#" className="ml-auto inline-block text-sm underline">
+                                    Forgot password?
+                            </Link>
+                        </div>
+                        <Button type="submit" className="w-full bg-creator font-bold mt-4">
+                            LOGIN
                         </Button>
+                        <hr className="bg-white border-white mt-2" />
                         <form>
-                            <Button formAction={signInWithGoogle} variant="outline" className="w-full">
+                            <Button 
+                            formAction={signInWithGoogle} 
+                            className="w-full bg-gray-400  text-gray-200 hover:text-black bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
                                 Login with Google
                             </Button>
                         </form>
                     </div>
                     <div className="mt-4 text-center text-sm">
-                    Don&apos;t have an account?{" "}
+                    No account yet? {" "}
                     <Link href="/register" className="underline">
                         Sign up
                     </Link>

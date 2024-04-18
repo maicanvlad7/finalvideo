@@ -63,6 +63,8 @@
       --border: 217.2 32.6% 17.5%;
       --input: 217.2 32.6% 17.5%;
       --ring: 212.7 26.8% 83.9%;
+
+      --color-creator: 141, 76%, 48%
     }
   }
 
@@ -74,3 +76,16 @@
       @apply bg-background text-foreground;
     }
   }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* Revert text color */
+  -webkit-text-fill-color: white !important;
+  color: white !important;
+  caret-color: white !important;
+
+  /* Revert background color */
+  transition: background-color 5000s ease-in-out 0s;
+}
