@@ -46,8 +46,8 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen justify-center content-center bg-[url('https://elei.b-cdn.net/videoDar/bgimages/bgnoauth.webp')]">
-            <Card className="mx-auto max-w-sm sm:max-w-lg sm:py-6 sm:px-12 px-3 py-8 bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 rounded-[20px]">
+        <div className="h-screen flex justify-center items-center bg-[url('https://elei.b-cdn.net/videoDar/bgimages/bgnoauth.webp')]">
+            <Card className="mx-auto max-w-sm px-3 py-8 sm:max-w-lg sm:py-6 sm:px-12  bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 rounded-[20px]">
                 <CardHeader className="text-center">
                     <CardTitle className="text-5xl text-creator">CreatorX</CardTitle>
                     <CardDescription>
