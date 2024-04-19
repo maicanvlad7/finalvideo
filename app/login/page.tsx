@@ -46,8 +46,8 @@ export default function Login() {
     };
 
     return (
-        <div className="h-screen flex justify-center items-center bg-[url('https://elei.b-cdn.net/videoDar/bgimages/bgnoauth.webp')]">
-            <Card className="mx-auto max-w-sm px-3 py-8 sm:max-w-lg sm:py-6 sm:px-12  bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 rounded-[20px]">
+        <div className="min-h-screen flex justify-center items-center bg-[url('https://elei.b-cdn.net/videoDar/bgimages/bgnoauth.webp')]">
+            <Card className="sm:min-w-[500px] min-w-[480px] px-12 py-8 max-w-sm sm:max-w-lg sm:py-6 sm:px-12  bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 rounded-[20px]">
                 <CardHeader className="text-center">
                     <CardTitle className="text-5xl text-creator">CreatorX</CardTitle>
                     <CardDescription>
@@ -62,7 +62,7 @@ export default function Login() {
                             id="email"
                             type="email"
                             placeholder="m@example.com"
-                            className="bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 text-md p-4"
+                            className="bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 text-md p-4 border-none"
                             required
                             />
                         </div>
@@ -74,7 +74,7 @@ export default function Login() {
                             id="password" 
                             type="password" 
                             required 
-                            className="bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 text-md p-4"
+                            className="bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 text-md p-4 border-none"
                             />
                         </div>
                         <div className="flex justify-between">

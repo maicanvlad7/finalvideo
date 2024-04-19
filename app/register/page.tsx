@@ -43,7 +43,7 @@ export default function Register() {
         return redirect("/learn");
     };
   return (
-    <div className="min-h-screen justify-center content-center align-middle">
+    <div className="min-h-screen flex justify-center items-center bg-[url('https://elei.b-cdn.net/videoDar/bgimages/bgnoauth.webp')]">
         <Card className="mx-auto max-w-sm sm:max-w-lg p-4 border-slate-300">
             <CardHeader className="text-center">
                 <CardTitle className="text-4xl">Sign Up</CardTitle>
